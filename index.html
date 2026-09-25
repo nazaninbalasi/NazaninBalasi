@@ -8,7 +8,7 @@
     <!-- Modern Clean Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -217,7 +217,6 @@
 
         .hero h1 .highlight {
             color: var(--primary);
-            position: relative;
         }
 
         .hero-summary {
@@ -547,8 +546,8 @@
         /* Audio Lo-fi Widget (Discreet) */
         .audio-pill {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
+            bottom: 24px;
+            left: 24px;
             z-index: 99;
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
@@ -572,6 +571,177 @@
 
         .audio-pill i {
             color: var(--primary);
+        }
+
+        /* --- Ham-Ghadam Chatbot Widget (Floating Bottom Right) --- */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-accent) 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius-pill);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .chatbot-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 28px rgba(124, 58, 237, 0.4);
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 84px;
+            right: 24px;
+            width: 360px;
+            max-width: calc(100vw - 48px);
+            height: 480px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Vazirmatn', sans-serif;
+            direction: rtl;
+        }
+
+        .chat-window.open {
+            display: flex;
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            background: var(--bg-surface-subtle);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-header-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--primary-soft);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .chat-header-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-title);
+        }
+
+        .chat-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .chat-msg {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 14px;
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .chat-msg.bot {
+            align-self: flex-start;
+            background: var(--bg-surface-subtle);
+            color: var(--text-title);
+            border: 1px solid var(--border-color);
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-msg.user {
+            align-self: flex-end;
+            background: var(--primary);
+            color: #ffffff;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-input-area {
+            padding: 12px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 8px;
+            background: var(--bg-surface);
+        }
+
+        .chat-input {
+            flex: 1;
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface-subtle);
+            color: var(--text-title);
+            padding: 10px 14px;
+            border-radius: var(--radius-pill);
+            outline: none;
+            font-family: inherit;
+            font-size: 0.88rem;
+        }
+
+        .chat-input:focus {
+            border-color: var(--primary);
+        }
+
+        .chat-send-btn {
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .chat-send-btn:hover {
+            background: var(--primary-hover);
         }
 
         /* Minimal Footer */
@@ -625,6 +795,9 @@
             .cta-banner {
                 padding: 30px 20px;
             }
+            .audio-pill {
+                display: none; /* Hide music on mobile to avoid overlap */
+            }
         }
     </style>
 </head>
@@ -639,6 +812,37 @@
     <div class="audio-pill" id="musicToggle">
         <i class="fa-solid fa-play" id="musicIcon"></i>
         <span id="musicText">Lo-Fi Vibe</span>
+    </div>
+
+    <!-- Floating Chatbot Widget Button (Bottom Right) -->
+    <button class="chatbot-btn" id="chatOpenBtn">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span>گپ با هم‌قدم</span>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-header-avatar">🌿</div>
+                <div>
+                    <div class="chat-header-title">هم‌قدم</div>
+                    <div style="font-size: 0.72rem; color: var(--text-muted);">شنونده و همراه روز تو</div>
+                </div>
+            </div>
+            <button class="chat-close-btn" id="chatCloseBtn">&times;</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Initial Prompt Message (Step 1) -->
+            <div class="chat-msg bot">
+                سلام! وقتت بخیر رفیق. خیلی خوشحالم که اینجایی 🌿<br>
+                امروزت چطور سپری شده؟ برام در ۲ الی ۳ جمله بگو حالت چطوره و چه حسی داری؟
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="از امروزت برام بنویس..." autocomplete="off">
+            <button class="chat-send-btn" id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
     </div>
 
     <!-- Header Navigation -->
@@ -672,7 +876,7 @@
                 </div>
                 <h1>Scrum Master with a <span class="highlight">Developer's</span> Empathy.</h1>
                 <p class="hero-summary">
-                    I bridge 5+ years of hands-on Android engineering with servant leadership to help cross-functional product teams eliminate blockers, build psychological safety, and deliver predictable user value.
+                    I bridge 5+ years of hands-on Android engineering with servant leadership to help cross-functional product teams eliminate blockers, build psychological safety, and deliver predictable user value[cite: 1, 2].
                 </p>
                 <div class="hero-actions">
                     <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="btn btn-primary">
@@ -703,7 +907,7 @@
             </div>
             <div class="metric-card">
                 <div class="metric-num">M.S.</div>
-                <div class="metric-label">E-Commerce & Digital Systems</div>
+                <div class="metric-label">E-Commerce & Digital Systems[cite: 1]</div>
             </div>
         </div>
 
@@ -720,7 +924,7 @@
                         Having spent half a decade developing native Android apps (Kotlin & Jetpack Compose), I know what engineering trade-offs, architecture bottlenecks, and technical debt feel like from the inside[cite: 1, 2].
                     </p>
                     <p>
-                        This technical foundation allows me to communicate effortlessly with developers, ask meaningful questions during refinement, and translate complex technical blockers into clear business insights.
+                        This technical foundation allows me to communicate effortlessly with developers, ask meaningful questions during refinement, and translate complex technical blockers into clear business insights[cite: 1].
                     </p>
                 </div>
 
@@ -878,7 +1082,7 @@
 
     <!-- Interactive JavaScript -->
     <script>
-        // Theme Switcher Logic
+        // 1. Theme Switcher Logic
         const themeBtn = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
 
@@ -900,7 +1104,7 @@
             }
         });
 
-        // Discreet Audio Player
+        // 2. Discreet Audio Player
         const musicToggle = document.getElementById('musicToggle');
         const bgMusic = document.getElementById('bgMusic');
         const musicIcon = document.getElementById('musicIcon');
@@ -917,6 +1121,91 @@
                 musicText.textContent = 'Lo-Fi Vibe';
             }
         });
+
+        // 3. Ham-Ghadam Chatbot Engine (Step 1 & Step 2 Prompt Fulfillment)
+        const chatOpenBtn = document.getElementById('chatOpenBtn');
+        const chatCloseBtn = document.getElementById('chatCloseBtn');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSendBtn = document.getElementById('chatSendBtn');
+
+        let chatStep = 1;
+
+        chatOpenBtn.addEventListener('click', () => {
+            chatWindow.classList.toggle('open');
+            if (chatWindow.classList.contains('open')) {
+                chatInput.focus();
+            }
+        });
+
+        chatCloseBtn.addEventListener('click', () => {
+            chatWindow.classList.remove('open');
+        });
+
+        function handleSendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            // Append User Message
+            appendMessage(text, 'user');
+            chatInput.value = '';
+
+            // Bot Thinking Indicator
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'chat-msg bot';
+            typingIndicator.textContent = 'در حال شنیدن و نوشتن...';
+            chatMessages.appendChild(typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            setTimeout(() => {
+                chatMessages.removeChild(typingIndicator);
+                generateHamGhadamResponse(text);
+            }, 900);
+        }
+
+        chatSendBtn.addEventListener('click', handleSendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSendMessage();
+        });
+
+        function appendMessage(content, sender) {
+            const msg = document.createElement('div');
+            msg.className = `chat-msg ${sender}`;
+            msg.innerHTML = content;
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Response Generation strictly following the prompt rules
+        function generateHamGhadamResponse(userText) {
+            const lower = userText.toLowerCase();
+            let mood = "خستگی پرمشغله 🌪️";
+            let empathy = "می‌فهمم چقدر بار ذهنی و دوندگی‌های امروز زیاد بوده و کاملاً حقت داری که الان احساس فرسودگی کنی؛ این حس کاملاً طبیعیه.";
+            let recharge = "همین الان برای ۳۰ ثانیه چشم‌هات رو کامل ببند و یک نفس عمیق شکمی بکش، فقط اجازه بده شونه‌هات رها بشن.";
+
+            if (lower.includes('خوب') || lower.includes('عالی') || lower.includes('خوش') || lower.includes('آرام') || lower.includes('ارام')) {
+                mood = "آرامش سبک و روشن ☕";
+                empathy = "چقدر قشنگه که این لحظه چنین آرامش یا حال سبکی رو تجربه می‌کنی؛ بودن در این حس واقعاً باارزشه.";
+                recharge = "یک جرعه آب یا چای گرم بنوش و همین چند ثانیه رو با لبخند مزه‌مزه کن.";
+            } else if (lower.includes('غم') || lower.includes('ناراحت') || lower.includes('تنها') || lower.includes('دلگیر') || lower.includes('سخت')) {
+                mood = "سنگینی آرام و خسته 🌧️";
+                empathy = "شنیدن این حس دلگیرکننده است؛ گاهی فقط باید اجازه داد این سنگینی بدون اینکه بخوایم حلش کنیم وجود داشته باشه، من کنارتم.";
+                recharge = "کف دو دستت رو آروم بذار روی قلبت و یک دم و بازدم نرم بکش، لازم نیست امروز به چیزی عجله کنی.";
+            } else if (lower.includes('استرس') || lower.includes('نگران') || lower.includes('شلوغ') || lower.includes('کار')) {
+                mood = "شلوغی ذهنی پردغدغه ⚡";
+                empathy = "حجم فکرهایی که همزمان دارن در ذهنت می‌دوند رو حس می‌کنم؛ کاملاً واضحه که امروز چقدر انرژی زیادی ازت رفته.";
+                recharge = "برای ۳۰ ثانیه دستت رو از کیبورد یا گوشی بردار، گردنت رو خیلی آروم به چپ و راست بچرخون تا انقباض رها بشه.";
+            }
+
+            const responseHtml = `
+                <strong>🌿 وضعیت مود امروز:</strong> ${mood}<br><br>
+                <strong>💬 پیام من به تو:</strong> ${empathy}<br><br>
+                <strong>✨ شارژر روحی کوچک:</strong> ${recharge}
+            `;
+
+            appendMessage(responseHtml, 'bot');
+        }
     </script>
 </body>
 </html>
