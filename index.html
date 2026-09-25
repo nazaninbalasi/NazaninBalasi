@@ -3,71 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazanin (Khatere) Balasi | Scrum Master & Agile Facilitator</title>
-    <!-- Google Fonts & Font Awesome Icons -->
+    <title>Khatere (Nazanin) Balasi | Scrum Master & Agile Facilitator</title>
+    
+    <!-- Modern Clean Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* CSS Variables for Dynamic Light & Dark Mode */
         :root {
-            --bg-body: #f8f6fc;
-            --bg-glass: rgba(255, 255, 255, 0.72);
-            --bg-glass-card: rgba(255, 255, 255, 0.65);
-            --bg-glass-hover: rgba(255, 255, 255, 0.95);
-            --glass-border: rgba(216, 180, 254, 0.5);
-            --glass-border-hover: rgba(168, 85, 247, 0.8);
-            
-            --primary: #8b5cf6;
-            --primary-dark: #6d28d9;
-            --primary-light: #f3e8ff;
-            --accent-lilac: #c084fc;
-            --accent-glow: rgba(168, 85, 247, 0.35);
+            /* Executive Minimal Lilac Palette (Light) */
+            --bg-base: #fcfbfe;
+            --bg-surface: #ffffff;
+            --bg-surface-subtle: #f7f5fa;
+            --border-color: #ede8f5;
+            --border-hover: #d8cde8;
 
-            --text-main: #1e1b4b;
-            --text-muted: #581c87;
-            --text-soft: #64748b;
-            --text-card-p: #334155;
+            --primary: #7c3aed;
+            --primary-hover: #6d28d9;
+            --primary-soft: #f3e8ff;
+            --primary-accent: #a855f7;
 
-            --orb-1: rgba(216, 180, 254, 0.65);
-            --orb-2: rgba(192, 132, 252, 0.45);
+            --text-title: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
 
-            --radius-lg: 28px;
-            --radius-md: 20px;
-            --radius-sm: 12px;
-
-            --shadow-glass: 0 16px 36px 0 rgba(139, 92, 246, 0.08);
-            --shadow-hover: 0 20px 45px -8px rgba(139, 92, 246, 0.32);
-            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 8px 24px -4px rgba(124, 58, 237, 0.08);
+            --shadow-lg: 0 16px 32px -6px rgba(124, 58, 237, 0.12);
+            --radius-pill: 9999px;
+            --radius-card: 16px;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Dark Theme Variables */
         body.dark-mode {
-            --bg-body: #0b0717;
-            --bg-glass: rgba(24, 18, 43, 0.75);
-            --bg-glass-card: rgba(30, 22, 53, 0.65);
-            --bg-glass-hover: rgba(43, 31, 74, 0.85);
-            --glass-border: rgba(168, 85, 247, 0.25);
-            --glass-border-hover: rgba(192, 132, 252, 0.85);
-            
-            --primary: #a855f7;
-            --primary-dark: #c084fc;
-            --primary-light: rgba(168, 85, 247, 0.2);
-            --accent-lilac: #d8b4fe;
-            --accent-glow: rgba(192, 132, 252, 0.45);
+            /* Sleek Midnight Lavender Palette (Dark) */
+            --bg-base: #090611;
+            --bg-surface: #120e1e;
+            --bg-surface-subtle: #191429;
+            --border-color: #261f38;
+            --border-hover: #433663;
 
-            --text-main: #f8fafc;
-            --text-muted: #e9d5ff;
-            --text-soft: #94a3b8;
-            --text-card-p: #cbd5e1;
+            --primary: #9333ea;
+            --primary-hover: #a855f7;
+            --primary-soft: rgba(147, 51, 234, 0.18);
+            --primary-accent: #c084fc;
 
-            --orb-1: rgba(147, 51, 234, 0.35);
-            --orb-2: rgba(126, 34, 206, 0.25);
+            --text-title: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
 
-            --shadow-glass: 0 16px 36px 0 rgba(0, 0, 0, 0.5);
-            --shadow-hover: 0 22px 50px -5px rgba(168, 85, 247, 0.45);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 18px 36px rgba(0, 0, 0, 0.7);
         }
 
         * {
@@ -78,41 +67,12 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.7;
-            position: relative;
-            overflow-x: hidden;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        /* Ambient Glow Orbs */
-        body::before,
-        body::after {
-            content: '';
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(130px);
-            z-index: -1;
-            pointer-events: none;
-            transition: background 0.5s ease;
-        }
-
-        body::before {
-            width: 550px;
-            height: 550px;
-            background: radial-gradient(circle, var(--orb-1), transparent 70%);
-            top: -120px;
-            left: -150px;
-        }
-
-        body::after {
-            width: 650px;
-            height: 650px;
-            background: radial-gradient(circle, var(--orb-2), transparent 70%);
-            bottom: -150px;
-            right: -150px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         a {
@@ -121,1038 +81,842 @@
         }
 
         .container {
-            max-width: 1080px;
+            max-width: 980px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Navigation */
-        nav {
+        /* Minimal Header Navigation */
+        header.nav-wrapper {
             position: sticky;
-            top: 20px;
+            top: 16px;
             z-index: 100;
-            margin: 0 auto 50px;
-            max-width: 900px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 999px;
-            padding: 12px 28px;
+            padding: 0 24px;
+            margin-bottom: 40px;
+        }
+
+        nav {
+            max-width: 980px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-pill);
+            padding: 10px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: var(--shadow-glass);
-            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
-        nav:hover {
-            border-color: var(--glass-border-hover);
+        body.dark-mode nav {
+            background: rgba(18, 14, 30, 0.85);
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
+        .brand-logo {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-title);
             display: flex;
             align-items: center;
             gap: 8px;
+            letter-spacing: -0.3px;
         }
 
-        .logo i {
-            color: var(--accent-lilac);
+        .brand-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
         }
 
-        .nav-links {
+        .nav-items {
             display: flex;
-            gap: 22px;
+            align-items: center;
+            gap: 24px;
             list-style: none;
         }
 
-        .nav-links a {
-            font-size: 0.92rem;
-            font-weight: 600;
-            color: var(--text-soft);
+        .nav-items a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-muted);
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
+        .nav-items a:hover {
             color: var(--primary);
         }
 
-        .nav-actions {
+        .nav-controls {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        /* Theme Toggle Button */
-        .theme-toggle-btn {
-            background: var(--primary-light);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            width: 38px;
-            height: 38px;
+        .btn-theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.85rem;
             transition: var(--transition);
         }
 
-        .theme-toggle-btn:hover {
-            transform: rotate(20deg) scale(1.1);
-            background: var(--primary);
-            color: #ffffff;
-            box-shadow: 0 0 15px var(--accent-glow);
+        .btn-theme-toggle:hover {
+            color: var(--primary);
+            border-color: var(--border-hover);
         }
 
-        .btn-nav {
-            padding: 9px 20px;
-            font-size: 0.85rem;
-        }
-
-        /* Hero Section */
+        /* Hero Section (30-second Rule) */
         .hero {
-            padding: 50px 0 90px;
+            padding: 40px 0 60px;
             display: grid;
-            grid-template-columns: 1.25fr 1fr;
+            grid-template-columns: 1.3fr 0.9fr;
             align-items: center;
-            gap: 50px;
+            gap: 48px;
         }
 
-        .hero-text .badge {
+        .hero-status {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 18px;
-            background: var(--primary-light);
-            backdrop-filter: blur(10px);
+            background: var(--primary-soft);
             color: var(--primary);
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.08);
-        }
-
-        .hero-text h1 {
-            font-size: 3.2rem;
-            line-height: 1.15;
-            font-weight: 800;
-            letter-spacing: -1.5px;
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            font-weight: 600;
             margin-bottom: 20px;
-            color: var(--text-main);
+            border: 1px solid rgba(124, 58, 237, 0.15);
         }
 
-        .hero-text h1 span {
-            background: linear-gradient(135deg, #a855f7 0%, #d8b4fe 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .status-pulse {
+            width: 6px;
+            height: 6px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
         }
 
-        .hero-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-soft);
-            margin-bottom: 32px;
-            font-weight: 400;
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            color: var(--text-title);
+            margin-bottom: 16px;
         }
 
-        .hero-cta {
+        .hero h1 .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-summary {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            line-height: 1.65;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
             display: flex;
-            gap: 16px;
+            align-items: center;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-            color: #ffffff !important;
-            padding: 13px 30px;
-            border-radius: 999px;
-            font-weight: 600;
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 25px -4px rgba(139, 92, 246, 0.45);
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: var(--radius-pill);
+            font-size: 0.9rem;
+            font-weight: 600;
             transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+            border: 1px solid var(--primary);
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px -4px rgba(139, 92, 246, 0.65);
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
         }
 
-        .btn-secondary {
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            color: var(--text-main);
-            border: 1px solid var(--glass-border);
-            padding: 13px 28px;
-            border-radius: 999px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
+        .btn-outline {
+            background: var(--bg-surface);
+            color: var(--text-title);
+            border: 1px solid var(--border-color);
         }
 
-        .btn-secondary:hover {
-            background: var(--bg-glass-hover);
-            border-color: var(--accent-lilac);
-            transform: translateY(-3px);
+        .btn-outline:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-surface-subtle);
+            transform: translateY(-2px);
         }
 
-        /* Hero Image */
-        .hero-image-wrap {
-            position: relative;
+        /* Profile Portrait */
+        .hero-media {
             display: flex;
             justify-content: center;
-        }
-
-        .hero-image-wrap::before {
-            content: '';
-            position: absolute;
-            width: 330px;
-            height: 330px;
-            background: linear-gradient(135deg, var(--accent-lilac), #ede9fe);
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            z-index: 0;
-            filter: blur(30px);
-            opacity: 0.65;
-            animation: morph 7s ease-in-out infinite alternate;
-        }
-
-        @keyframes morph {
-            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-        }
-
-        .hero-image {
-            width: 320px;
-            height: 380px;
-            object-fit: cover;
-            border-radius: var(--radius-lg);
             position: relative;
-            z-index: 1;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            border: 5px solid var(--bg-glass);
+        }
+
+        .portrait-frame {
+            width: 290px;
+            height: 350px;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            position: relative;
             transition: var(--transition);
         }
 
-        .hero-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 25px 50px -5px var(--accent-glow);
+        .portrait-frame:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-hover);
         }
 
-        /* Section Global */
-        section {
-            padding: 80px 0;
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .section-header {
-            margin-bottom: 50px;
+        /* Quick Metric Ribbon */
+        .metrics-ribbon {
+            margin: 10px 0 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .metric-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-card);
+            padding: 20px;
             text-align: center;
+            transition: var(--transition);
+        }
+
+        .metric-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .metric-num {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 50px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-headline {
+            margin-bottom: 32px;
         }
 
         .section-tag {
+            font-size: 0.75rem;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             display: block;
         }
 
         .section-title {
-            font-size: 2.3rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            letter-spacing: -0.8px;
-            color: var(--text-main);
+            color: var(--text-title);
+            letter-spacing: -0.5px;
         }
 
-        /* Interactive Story Card */
-        .story-card {
-            background: var(--bg-glass-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--glass-border);
-            padding: 44px;
-            box-shadow: var(--shadow-glass);
+        /* About & Career Path Grid */
+        .about-grid {
             display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 36px;
-            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .about-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-card);
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
         }
 
-        .story-card:hover {
-            border-color: var(--glass-border-hover);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+        .about-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
-        .story-quote-icon {
-            font-size: 3.5rem;
-            color: var(--accent-lilac);
-            opacity: 0.55;
-        }
-
-        .story-content p {
-            font-size: 1.1rem;
-            color: var(--text-card-p);
-            margin-bottom: 16px;
-        }
-
-        .story-content strong {
-            color: var(--accent-lilac);
-        }
-
-        /* Timeline & Experience */
-        .timeline {
-            position: relative;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: linear-gradient(180deg, var(--accent-lilac) 0%, rgba(216, 180, 254, 0.1) 100%);
-            top: 20px;
-            bottom: 20px;
-            left: 20px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 56px;
-            margin-bottom: 40px;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 11px;
-            top: 10px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--bg-body);
-            border: 4px solid var(--primary);
-            box-shadow: 0 0 12px var(--accent-glow);
-            z-index: 2;
-            transition: var(--transition);
-        }
-
-        .timeline-item:hover .timeline-dot {
-            background: var(--primary);
-            transform: scale(1.3);
-            box-shadow: 0 0 20px var(--primary);
-        }
-
-        /* Experience Card Hover */
-        .exp-card {
-            background: var(--bg-glass-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 32px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-glass);
-            transition: var(--transition);
-        }
-
-        .exp-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            background: var(--bg-glass-hover);
-            border-color: var(--glass-border-hover);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .exp-header {
+        .about-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 14px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 12px;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-card h3 i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .about-card p {
+            font-size: 0.94rem;
+            color: var(--text-body);
+            line-height: 1.7;
             margin-bottom: 12px;
         }
 
-        .exp-role {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .exp-company {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .exp-time {
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 4px 14px;
-            border-radius: 999px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            border: 1px solid var(--glass-border);
-        }
-
-        .exp-card ul {
-            list-style: none;
-            margin-top: 14px;
-        }
-
-        .exp-card ul li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 10px;
-            font-size: 0.96rem;
-            color: var(--text-card-p);
-        }
-
-        .exp-card ul li::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            color: var(--accent-lilac);
-            font-size: 0.8rem;
-            top: 2px;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .skill-box {
-            background: var(--bg-glass-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 30px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-glass);
-            transition: var(--transition);
-        }
-
-        .skill-box:hover {
-            transform: translateY(-8px);
-            background: var(--bg-glass-hover);
-            border-color: var(--glass-border-hover);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .skill-icon {
-            width: 52px;
-            height: 52px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            border: 1px solid var(--glass-border);
-            transition: var(--transition);
-        }
-
-        .skill-box:hover .skill-icon {
-            transform: scale(1.1) rotate(6deg);
-            background: var(--primary);
-            color: #ffffff;
-        }
-
-        .skill-box h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: var(--text-main);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tags span {
-            background: var(--primary-light);
-            color: var(--text-main);
-            border: 1px solid var(--glass-border);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .skill-tags span:hover {
-            transform: scale(1.06);
-            border-color: var(--accent-lilac);
-        }
-
-        /* Passions & Lifestyle */
-        .passions-grid {
+        /* Services & Skills With Real-World Application */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .passion-card {
-            background: var(--bg-glass-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 30px;
-            display: flex;
             gap: 20px;
-            align-items: flex-start;
-            box-shadow: var(--shadow-glass);
+        }
+
+        .service-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-card);
+            padding: 26px;
             transition: var(--transition);
-        }
-
-        .passion-card:hover {
-            transform: translateY(-8px);
-            background: var(--bg-glass-hover);
-            border-color: var(--glass-border-hover);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .passion-icon {
-            font-size: 1.8rem;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 14px;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--glass-border);
-            transition: var(--transition);
-        }
-
-        .passion-card:hover .passion-icon {
-            transform: scale(1.12);
-        }
-
-        .passion-info h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
-
-        .passion-info p {
-            font-size: 0.92rem;
-            color: var(--text-soft);
-        }
-
-        /* Floating Audio Player Widget */
-        .music-widget {
-            position: fixed;
-            bottom: 24px;
-            left: 24px;
-            z-index: 999;
-            background: var(--bg-glass);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid var(--glass-border);
-            border-radius: 999px;
-            padding: 8px 18px 8px 10px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: var(--shadow-hover);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .music-widget:hover {
-            border-color: var(--glass-border-hover);
-            transform: scale(1.05);
-        }
-
-        .play-btn-circle {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .music-widget.playing .play-btn-circle {
-            background: var(--accent-lilac);
-        }
-
-        .music-info {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
-        .music-title {
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: var(--text-main);
+        .service-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
-        .music-sub {
-            font-size: 0.68rem;
-            color: var(--text-soft);
-        }
-
-        /* Equalizer Animation */
-        .equalizer {
-            display: flex;
-            align-items: flex-end;
-            gap: 3px;
-            height: 14px;
-        }
-
-        .equalizer span {
-            width: 3px;
-            height: 100%;
-            background: var(--primary);
-            border-radius: 2px;
-            transition: height 0.2s ease;
-        }
-
-        .music-widget.playing .equalizer span:nth-child(1) { animation: bounce 0.8s infinite ease alternate; }
-        .music-widget.playing .equalizer span:nth-child(2) { animation: bounce 1.1s infinite ease alternate 0.2s; }
-        .music-widget.playing .equalizer span:nth-child(3) { animation: bounce 0.9s infinite ease alternate 0.4s; }
-
-        @keyframes bounce {
-            0% { height: 3px; }
-            100% { height: 14px; }
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-glass);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-top: 1px solid var(--glass-border);
-            padding: 50px 0 35px;
-            margin-top: 60px;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .social-btn {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: var(--primary-light);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--primary-soft);
+            color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+
+        .service-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 10px;
+        }
+
+        .service-app-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            margin-top: 14px;
+            display: block;
+        }
+
+        .service-app-text {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        /* Passions / Personal Dimension */
+        .passions-pill-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .passion-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-card);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
             transition: var(--transition);
         }
 
-        .social-btn:hover {
-            background: var(--primary);
-            color: #ffffff;
+        .passion-item:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .passion-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .passion-item-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text-title);
+        }
+
+        .passion-item-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Clear Call to Action (CTA) Section */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-subtle) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 44px;
+            text-align: center;
+            margin: 40px 0 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cta-banner h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-title);
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .cta-banner p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            margin: 0 auto 28px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* Audio Lo-fi Widget (Discreet) */
+        .audio-pill {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 99;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-pill);
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-title);
+            transition: var(--transition);
+        }
+
+        .audio-pill:hover {
             border-color: var(--primary);
-            transform: translateY(-4px) scale(1.08);
-            box-shadow: 0 8px 20px var(--accent-glow);
+            transform: scale(1.04);
         }
 
-        .footer-copy {
-            font-size: 0.88rem;
-            color: var(--text-soft);
+        .audio-pill i {
+            color: var(--primary);
         }
 
-        /* Responsive */
-        @media (max-width: 860px) {
+        /* Minimal Footer */
+        footer {
+            padding: 40px 0 30px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: var(--text-body);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 820px) {
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding-top: 20px;
+                gap: 36px;
             }
-            .hero-cta {
+            .hero-actions {
                 justify-content: center;
             }
-            .hero-image-wrap {
+            .hero-media {
                 order: -1;
             }
-            .hero-image {
-                width: 260px;
-                height: 310px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .story-card {
+            .metrics-ribbon {
                 grid-template-columns: 1fr;
-                text-align: center;
-                padding: 30px 24px;
             }
-            .story-quote-icon {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-items {
                 display: none;
             }
-            .music-widget {
-                bottom: 16px;
-                left: 16px;
+            .cta-banner {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Floating Audio Element -->
+    <!-- Audio Element -->
     <audio id="bgMusic" loop>
-        <!-- Royalty-free Chill Lo-Fi Track -->
         <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Floating Music Widget (Bottom Left) -->
-    <div class="music-widget" id="musicToggle">
-        <div class="play-btn-circle">
-            <i class="fa-solid fa-play" id="musicIcon"></i>
-        </div>
-        <div class="music-info">
-            <span class="music-title">Lo-Fi Ambient</span>
-            <span class="music-sub" id="musicStatus">Click to play</span>
-        </div>
-        <div class="equalizer">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <!-- Discreet Music Widget (Bottom Left) -->
+    <div class="audio-pill" id="musicToggle">
+        <i class="fa-solid fa-play" id="musicIcon"></i>
+        <span id="musicText">Lo-Fi Vibe</span>
     </div>
 
-    <!-- Floating Glass Navigation Bar -->
-    <nav>
-        <a href="#" class="logo">
-            <i class="fa-solid fa-sparkles"></i> Khatere Balasi
-        </a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#passions">Life & Passions</a></li>
-        </ul>
-        <div class="nav-actions">
-            <!-- Dark / Light Theme Toggle -->
-            <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Theme">
-                <i class="fa-solid fa-moon" id="themeIcon"></i>
-            </button>
-            <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="btn-primary btn-nav">
-                <i class="fa-brands fa-linkedin"></i> Connect
+    <!-- Header Navigation -->
+    <header class="nav-wrapper">
+        <nav>
+            <a href="#" class="brand-logo">
+                <span class="brand-dot"></span> Khatere Balasi
             </a>
-        </div>
-    </nav>
+            <ul class="nav-items">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Capabilities</a></li>
+                <li><a href="#passions">Personal</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="btn-theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary" style="padding: 7px 18px; font-size: 0.82rem;">Let's Talk</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main class="container">
 
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="hero-text">
-                <div class="badge">
-                    <i class="fa-solid fa-circle-check"></i> Open to Scrum & Agile Roles
+        <!-- 1. Hero Section: 30-Second Impression -->
+        <section class="hero" style="border-top: none;">
+            <div class="hero-content">
+                <div class="hero-status">
+                    <span class="status-pulse"></span> Available for Scrum Master & Agile Roles
                 </div>
-                <h1>Empowering Teams, <span>Delivering Value.</span></h1>
-                <p class="hero-subtitle">
-                    Scrum Master with 5+ years of software engineering background in Android development[cite: 1, 2]. I bridge technical empathy with an agile mindset to foster high-performing, happy product teams[cite: 1].
+                <h1>Scrum Master with a <span class="highlight">Developer's</span> Empathy.</h1>
+                <p class="hero-summary">
+                    I bridge 5+ years of hands-on Android engineering with servant leadership to help cross-functional product teams eliminate blockers, build psychological safety, and deliver predictable user value.
                 </p>
-                <div class="hero-cta">
-                    <a href="mailto:balasinazanin@gmail.com" class="btn-primary">
-                        <i class="fa-solid fa-paper-plane"></i> Get in Touch
+                <div class="hero-actions">
+                    <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
                     </a>
-                    <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="btn-secondary">
-                        <i class="fa-brands fa-linkedin"></i> View LinkedIn
+                    <a href="mailto:balasinazanin@gmail.com" class="btn btn-outline">
+                        <i class="fa-regular fa-envelope"></i> Send Email
                     </a>
                 </div>
             </div>
 
-            <div class="hero-image-wrap">
-                <img src="profile.jpg" alt="Khatere Balasi" class="hero-image">
+            <div class="hero-media">
+                <div class="portrait-frame">
+                    <img src="profile.jpg" alt="Khatere Balasi portrait">
+                </div>
             </div>
-        </header>
+        </section>
 
-        <!-- About / Story Section -->
+        <!-- Fast Scan Metrics -->
+        <div class="metrics-ribbon">
+            <div class="metric-card">
+                <div class="metric-num">5+ Years</div>
+                <div class="metric-label">Software Engineering Roots</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-num">100%</div>
+                <div class="metric-label">Focus on Team Flow & Value Delivery</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-num">M.S.</div>
+                <div class="metric-label">E-Commerce & Digital Systems</div>
+            </div>
+        </div>
+
+        <!-- 2. About Me: Story & Career Journey -->
         <section id="about">
-            <div class="section-header">
-                <span class="section-tag">Philosophy & Mindset</span>
-                <h2 class="section-title">Bridging Code and Agility</h2>
+            <div class="section-headline">
+                <span class="section-tag">Background & Vision</span>
+                <h2 class="section-title">Bridging Code and Agile Leadership</h2>
             </div>
-            <div class="story-card">
-                <div class="story-quote-icon">
-                    <i class="fa-solid fa-quote-left"></i>
-                </div>
-                <div class="story-content">
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-terminal"></i> Technical Roots to Agility</h3>
                     <p>
-                        Having spent over 5 years in the engineering trenches as a <strong>Native Android Developer</strong>, I understand the real-world trade-offs, technical debts, and architectural discussions developers face daily[cite: 1, 2].
+                        Having spent half a decade developing native Android apps (Kotlin & Jetpack Compose), I know what engineering trade-offs, architecture bottlenecks, and technical debt feel like from the inside[cite: 1, 2].
                     </p>
                     <p>
-                        Transitioning into <strong>Agile Coaching & Scrum Facilitation</strong>, my mission is to remove blockers, cultivate psychological safety, and ensure engineering teams aren't just shipping tickets—they are continuously delivering measurable user value[cite: 1].
+                        This technical foundation allows me to communicate effortlessly with developers, ask meaningful questions during refinement, and translate complex technical blockers into clear business insights.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-compass"></i> Product Mindset & Facilitation</h3>
+                    <p>
+                        Completing a comprehensive 6-month Product Management training transformed how I look at delivery: shipping tickets isn’t success; delivering actual customer value is[cite: 1].
+                    </p>
+                    <p>
+                        As Scrum Master at Mahsan, I partner with Product Owners to maintain backlog health, facilitate clear retrospectives, and foster an environment where engineers take genuine ownership of their outcomes[cite: 1].
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Timeline -->
-        <section id="experience">
-            <div class="section-header">
-                <span class="section-tag">Career Journey</span>
-                <h2 class="section-title">Work Experience</h2>
+        <!-- 3. Capabilities & Real-World Application -->
+        <section id="services">
+            <div class="section-headline">
+                <span class="section-tag">Competencies & Value</span>
+                <h2 class="section-title">What I Bring to Product Teams</h2>
             </div>
 
-            <div class="timeline">
-                <!-- Role 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="exp-card">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-role">Scrum Master</div>
-                                <div class="exp-company">Mahsan • Enterprise Mobility Solutions</div>
-                            </div>
-                            <span class="exp-time">Dec 2024 – Present</span>
-                        </div>
-                        <ul>
-                            <li>Facilitating key Scrum ceremonies: Sprint Planning, Daily Standups, Reviews, and Retrospectives[cite: 1, 2].</li>
-                            <li>Partnering closely with Product Owners on backlog refinement, story breakdown, and defining crisp acceptance criteria[cite: 1].</li>
-                            <li>Eliminating daily impediments, tracking delivery metrics, and championing transparency on Jira and Confluence[cite: 1].</li>
-                        </ul>
+            <div class="services-grid">
+                <!-- Competency 1 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+                        <h4>Agile & Scrum Facilitation</h4>
+                        <p style="font-size: 0.92rem; color: var(--text-body);">
+                            Guiding Sprint Planning, Daily Scrums, Reviews, and Retrospectives with clear structures[cite: 1].
+                        </p>
+                    </div>
+                    <div>
+                        <span class="service-app-label">Real-world impact:</span>
+                        <p class="service-app-text">Eliminates meeting fatigue, focuses discussions on actionable commitments, and creates psychological safety across squads.</p>
                     </div>
                 </div>
 
-                <!-- Role 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="exp-card">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-role">Android Developer</div>
-                                <div class="exp-company">Mahsan</div>
-                            </div>
-                            <span class="exp-time">Aug 2021 – Dec 2024</span>
-                        </div>
-                        <ul>
-                            <li>Developed and scaled mission-critical features for an Enterprise Mobility Management (EMM) product using Kotlin and Jetpack Compose[cite: 1, 2].</li>
-                            <li>Actively participated in cross-functional agile rituals, collaborating with Backend, QA, and Product teams[cite: 1].</li>
-                        </ul>
+                <!-- Competency 2 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-list-check"></i></div>
+                        <h4>Backlog Health & Refinement</h4>
+                        <p style="font-size: 0.92rem; color: var(--text-body);">
+                            Partnering with Product Owners to slice epics, write crisp user stories, and define acceptance criteria[cite: 1].
+                        </p>
+                    </div>
+                    <div>
+                        <span class="service-app-label">Real-world impact:</span>
+                        <p class="service-app-text">Reduces sprint mid-flight surprises and ensures engineers start sprints with zero ambiguity regarding requirements.</p>
                     </div>
                 </div>
 
-                <!-- Role 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="exp-card">
-                        <div class="exp-header">
-                            <div>
-                                <div class="exp-role">Android Developer</div>
-                                <div class="exp-company">Rahyab Rayan Farda & RayanAndishehNasr</div>
-                            </div>
-                            <span class="exp-time">Nov 2018 – Jun 2021</span>
-                        </div>
-                        <ul>
-                            <li>Engineered native Android clients utilizing Java and Kotlin with robust REST API integrations[cite: 1].</li>
-                            <li>Delivered user-friendly mobile features within early-stage Agile squads[cite: 1].</li>
-                        </ul>
+                <!-- Competency 3 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h4>Delivery Visibility & Tooling</h4>
+                        <p style="font-size: 0.92rem; color: var(--text-body);">
+                            Mastery of Jira, Confluence, and Miro to visualize workflow bottlenecks and maintain clear sprint metrics[cite: 1].
+                        </p>
+                    </div>
+                    <div>
+                        <span class="service-app-label">Real-world impact:</span>
+                        <p class="service-app-text">Provides transparent progress metrics to stakeholders while removing daily operational impediments for developers.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Core Skills -->
-        <section id="skills">
-            <div class="section-header">
-                <span class="section-tag">Toolbox</span>
-                <h2 class="section-title">Core Competencies</h2>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-arrows-spin"></i></div>
-                    <h3>Agile & Facilitation</h3>
-                    <div class="skill-tags">
-                        <span>Sprint Planning</span>
-                        <span>Retrospectives</span>
-                        <span>Impediment Removal</span>
-                        <span>Continuous Improvement</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-                    <h3>Product Mindset</h3>
-                    <div class="skill-tags">
-                        <span>User Story Mapping</span>
-                        <span>Acceptance Criteria</span>
-                        <span>Value Discovery</span>
-                        <span>Backlog Refinement</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Technical Roots</h3>
-                    <div class="skill-tags">
-                        <span>Android Ecosystem</span>
-                        <span>Kotlin & Java</span>
-                        <span>SDLC</span>
-                        <span>Git & CI/CD</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-toolbox"></i></div>
-                    <h3>Tools & Workspaces</h3>
-                    <div class="skill-tags">
-                        <span>Jira Software</span>
-                        <span>Confluence</span>
-                        <span>Miro</span>
-                        <span>Postman</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Passions & Lifestyle -->
+        <!-- 4. Personal Dimensions & Lifestyle -->
         <section id="passions">
-            <div class="section-header">
-                <span class="section-tag">Beyond The Standup</span>
-                <h2 class="section-title">Passions & Lifestyle</h2>
+            <div class="section-headline">
+                <span class="section-tag">Beyond Work</span>
+                <h2 class="section-title">Life, Energy & Inspiration</h2>
             </div>
 
-            <div class="passions-grid">
-                <div class="passion-card">
-                    <div class="passion-icon"><i class="fa-solid fa-spa"></i></div>
-                    <div class="passion-info">
-                        <h4>Yoga & Mindfulness</h4>
-                        <p>Practicing yoga centers my focus, keeping patience and clarity ready for complex sprint facilitation.</p>
+            <div class="passions-pill-container">
+                <div class="passion-item">
+                    <i class="fa-solid fa-spa"></i>
+                    <div>
+                        <div class="passion-item-title">Yoga & Mindfulness</div>
+                        <div class="passion-item-desc">Cultivates patience & focus</div>
                     </div>
                 </div>
 
-                <div class="passion-card">
-                    <div class="passion-icon"><i class="fa-solid fa-person-swimming"></i></div>
-                    <div class="passion-info">
-                        <h4>Swimming</h4>
-                        <p>My go-to sport for recharging energy, resetting the mind, and staying refreshed.</p>
+                <div class="passion-item">
+                    <i class="fa-solid fa-person-swimming"></i>
+                    <div>
+                        <div class="passion-item-title">Swimming</div>
+                        <div class="passion-item-desc">Endurance & energy reset</div>
                     </div>
                 </div>
 
-                <div class="passion-card">
-                    <div class="passion-icon"><i class="fa-solid fa-tv"></i></div>
-                    <div class="passion-info">
-                        <h4>Sitcom Enthusiast</h4>
-                        <p>Die-hard fan of classic sitcoms. <em>"F.R.I.E.N.D.S"</em> is my ultimate comfort zone and endless source of laughs.</p>
+                <div class="passion-item">
+                    <i class="fa-solid fa-tv"></i>
+                    <div>
+                        <div class="passion-item-title">Sitcoms (F.R.I.E.N.D.S)</div>
+                        <div class="passion-item-desc">Ultimate comfort & humor</div>
                     </div>
                 </div>
 
-                <div class="passion-card">
-                    <div class="passion-icon"><i class="fa-solid fa-plane-departure"></i></div>
-                    <div class="passion-info">
-                        <h4>Travel & Exploring</h4>
-                        <p>Discovering new cities, vibrant streets, and experiencing diverse cultures whenever an adventure calls.</p>
+                <div class="passion-item">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <div>
+                        <div class="passion-item-title">Travel & Culture</div>
+                        <div class="passion-item-desc">Exploring cities & horizons</div>
                     </div>
                 </div>
 
-                <div class="passion-card">
-                    <div class="passion-icon"><i class="fa-solid fa-utensils"></i></div>
-                    <div class="passion-info">
-                        <h4>Culinary Arts</h4>
-                        <p>Cooking is pure creativity for me—experimenting with new recipes and sharing delicious meals with loved ones.</p>
+                <div class="passion-item">
+                    <i class="fa-solid fa-utensils"></i>
+                    <div>
+                        <div class="passion-item-title">Culinary Arts</div>
+                        <div class="passion-item-desc">Experimenting with flavours</div>
                     </div>
                 </div>
 
-                <div class="passion-card">
-                    <div class="passion-icon"><i class="fa-solid fa-bag-shopping"></i></div>
-                    <div class="passion-info">
-                        <h4>Shopping & Styling</h4>
-                        <p>An eye for aesthetics, curated designs, and finding charm in everyday items.</p>
+                <div class="passion-item">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div>
+                        <div class="passion-item-title">Styling & Aesthetic</div>
+                        <div class="passion-item-desc">Eye for clean design</div>
                     </div>
                 </div>
             </div>
         </section>
 
-    </div>
+        <!-- 5. Clear Call to Action (CTA) -->
+        <section id="contact" style="border-top: none; padding-top: 0;">
+            <div class="cta-banner">
+                <h3>Let’s build high-performing teams together</h3>
+                <p>Looking for a Scrum Master who understands both code and human dynamics? I’d love to connect and discuss how I can contribute to your team.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:balasinazanin@gmail.com" class="btn btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Send an Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="btn btn-outline">
+                        <i class="fa-brands fa-linkedin"></i> View LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="social-btn" title="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:balasinazanin@gmail.com" class="social-btn" title="Email">
-                <i class="fa-regular fa-envelope"></i>
-            </a>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:balasinazanin@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
         </div>
-        <p class="footer-copy">Designed with a Lilac Glassmorphic vibe © Khatere Balasi. Hosted on GitHub Pages.</p>
+        <p>© Khatere (Nazanin) Balasi. Hosted on GitHub Pages.</p>
     </footer>
 
-    <!-- Interactive JavaScript for Theme & Music -->
+    <!-- Interactive JavaScript -->
     <script>
-        // 1. Theme Toggle Logic
-        const themeToggleBtn = document.getElementById('themeToggle');
+        // Theme Switcher Logic
+        const themeBtn = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
 
-        // Check local storage for preference
-        if (localStorage.getItem('theme') === 'dark') {
+        if (localStorage.getItem('portfolio-theme') === 'dark') {
             document.body.classList.add('dark-mode');
             themeIcon.classList.replace('fa-moon', 'fa-sun');
         }
 
-        themeToggleBtn.addEventListener('click', () => {
+        themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
             
             if (isDark) {
                 themeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('theme', 'dark');
+                localStorage.setItem('portfolio-theme', 'dark');
             } else {
                 themeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('theme', 'light');
+                localStorage.setItem('portfolio-theme', 'light');
             }
         });
 
-        // 2. Audio Background Music Logic
+        // Discreet Audio Player
         const musicToggle = document.getElementById('musicToggle');
         const bgMusic = document.getElementById('bgMusic');
         const musicIcon = document.getElementById('musicIcon');
-        const musicStatus = document.getElementById('musicStatus');
+        const musicText = document.getElementById('musicText');
 
         musicToggle.addEventListener('click', () => {
             if (bgMusic.paused) {
                 bgMusic.play();
-                musicToggle.classList.add('playing');
                 musicIcon.classList.replace('fa-play', 'fa-pause');
-                musicStatus.textContent = 'Playing...';
+                musicText.textContent = 'Playing...';
             } else {
                 bgMusic.pause();
-                musicToggle.classList.remove('playing');
                 musicIcon.classList.replace('fa-pause', 'fa-play');
-                musicStatus.textContent = 'Paused';
+                musicText.textContent = 'Lo-Fi Vibe';
             }
         });
     </script>
-
 </body>
 </html>
