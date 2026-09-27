@@ -775,10 +775,10 @@
 <body>
 
     <!-- Discreet Music Widget (Bottom Left) -->
-    <div class="audio-pill" id="musicToggle">
+   <!-- <div class="audio-pill" id="musicToggle">
         <i class="fa-solid fa-play" id="musicIcon"></i>
         <span id="musicText">Lo-Fi Vibe</span>
-    </div>
+    </div> -->
 
     <!-- Header Navigation -->
     <header class="nav-wrapper">
@@ -1094,25 +1094,7 @@
         const musicIcon = document.getElementById('musicIcon');
         const musicText = document.getElementById('musicText');
 
-        const audio = new Audio("https://cdn.freesound.org/previews/612/612085_5674468-lq.mp3");
-        audio.loop = true;
-        audio.volume = 0.4;
-
-        musicToggle.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play().then(() => {
-                    musicIcon.className = 'fa-solid fa-pause';
-                    musicText.textContent = 'Playing...';
-                }).catch(err => {
-                    console.error("Audio error:", err);
-                    musicText.textContent = 'Retry';
-                });
-            } else {
-                audio.pause();
-                musicIcon.className = 'fa-solid fa-play';
-                musicText.textContent = 'Lo-Fi Vibe';
-            }
-        });
+    
 
         // Chatbot Toggle Logic (Metis Chat Widget URL)
         const chatTriggerBtn = document.getElementById('chatTriggerBtn');
