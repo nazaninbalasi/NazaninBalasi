@@ -589,6 +589,131 @@
             color: var(--primary);
         }
 
+        /* ------------------------------------------------------------- */
+        /* ELEGANT DARK-MODE INTEGRATED CHATBOT                          */
+        /* ------------------------------------------------------------- */
+        .chatbot-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .chatbot-trigger-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .chatbot-trigger-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 14px 32px rgba(124, 58, 237, 0.6);
+        }
+
+        .chatbot-tooltip {
+            background: rgba(18, 14, 30, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(168, 85, 247, 0.45);
+            color: #f3e8ff;
+            padding: 8px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-tooltip:hover {
+            border-color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        .chatbot-tooltip span.pulse-dot {
+            width: 7px;
+            height: 7px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .chatbot-window {
+            display: none;
+            width: 380px;
+            height: 550px;
+            background: #120e1e;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            border-radius: 20px;
+            box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            flex-direction: column;
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chatbot-window-header {
+            background: #191429;
+            padding: 12px 18px;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #f8fafc;
+        }
+
+        .chatbot-window-header-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .chatbot-close-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-close-btn:hover {
+            color: #ffffff;
+        }
+
+        /* Inverting the white Metis iframe into sleek dark mode */
+        .chatbot-window iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #120e1e;
+            filter: invert(0.92) hue-rotate(180deg) brightness(0.95) contrast(0.95);
+        }
+
         /* Minimal Footer */
         footer {
             padding: 40px 0 30px;
@@ -615,7 +740,6 @@
             color: var(--primary);
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 820px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -643,62 +767,19 @@
             .audio-pill {
                 display: none;
             }
+            .chatbot-window {
+                width: calc(100vw - 32px);
+                height: 480px;
+            }
         }
-
-/* Metis Widget Custom Styling */
-        iframe[src*="metisai.ir"],
-        div[id*="metis"] {
-            border-radius: 20px !important;
-            overflow: hidden !important;
-            box-shadow: 0 20px 45px -10px rgba(124, 58, 237, 0.4) !important;
-            border: 1px solid rgba(168, 85, 247, 0.35) !important;
-        }
-        
-        /* Chatbot Helper Tag (Above Widget) */
-        .metis-helper-badge {
-            position: fixed;
-            bottom: 92px;
-            right: 24px;
-            z-index: 9999;
-            background: rgba(18, 14, 30, 0.88);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(168, 85, 247, 0.45);
-            color: #f3e8ff;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-            pointer-events: none;
-            direction: rtl;
-            animation: floatBadge 3s ease-in-out infinite alternate;
-        }
-        
-        .metis-helper-badge span.pulse-dot {
-            width: 7px;
-            height: 7px;
-            background: #a855f7;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #c084fc;
-        }
-        
-        @keyframes floatBadge {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-4px); }
-        }
-                
     </style>
 </head>
 <body>
 
-    <!-- Audio Element -->
-<audio id="bgMusic" loop preload="auto">
-    <source src="https://cdn.freesound.org/previews/612/612085_5674468-lq.mp3" type="audio/mpeg">
-</audio>
+    <!-- Audio Element (Reliable Global CDN) -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/sweet_chill_hop.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- Discreet Music Widget (Bottom Left) -->
     <div class="audio-pill" id="musicToggle">
@@ -729,7 +810,7 @@
 
     <main class="container">
 
-        <!-- 1. Hero Section: 30-Second Impression -->
+        <!-- 1. Hero Section -->
         <section class="hero" style="border-top: none;">
             <div class="hero-content">
                 <div class="hero-status">
@@ -737,14 +818,14 @@
                 </div>
                 <h1>Scrum Master with a <span class="highlight">Developer's</span> Empathy.</h1>
                 <p class="hero-summary">
-                    Scrum Master committed to advancing Agile excellence and team enablement, backed by over 5 years of hands-on software development experience that bridges engineering realities with high-impact product outcomes.
+                    Dedicated Scrum Master committed to advancing Agile excellence and team enablement, backed by over 5 years of hands-on software development experience that bridges engineering realities with high-impact product outcomes[cite: 1, 2].
                 </p>
                 <div class="hero-actions">
                     <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="btn btn-primary">
-                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn[cite: 1]
                     </a>
                     <a href="mailto:balasinazanin@gmail.com" class="btn btn-outline">
-                        <i class="fa-regular fa-envelope"></i> Send Email
+                        <i class="fa-regular fa-envelope"></i> Send Email[cite: 1]
                     </a>
                 </div>
             </div>
@@ -760,15 +841,15 @@
         <div class="metrics-ribbon">
             <div class="metric-card">
                 <div class="metric-num">2+ Years</div>
-                <div class="metric-label">Scrum Mastery & Agile Delivery</div>
+                <div class="metric-label">Scrum Mastery & Agile Delivery[cite: 1, 2]</div>
             </div>
             <div class="metric-card">
                 <div class="metric-num">5+ Years</div>
-                <div class="metric-label">Software Engineering Background</div>
+                <div class="metric-label">Software Engineering Background[cite: 1, 2]</div>
             </div>
             <div class="metric-card">
                 <div class="metric-num">M.S.</div>
-                <div class="metric-label">E-Commerce & Digital Systems</div>
+                <div class="metric-label">E-Commerce & Digital Systems[cite: 1]</div>
             </div>
         </div>
 
@@ -780,47 +861,47 @@
             </div>
             
             <div class="about-cards-grid">
-                <!-- Box 1: Current Role & Immediate Impact -->
+                <!-- Box 1: Current Role -->
                 <div class="about-feature-box">
                     <div class="about-box-header">
                         <div class="about-box-icon"><i class="fa-solid fa-arrows-to-circle"></i></div>
                         <h3>Current Role: Scrum Master</h3>
                     </div>
                     <p>
-                        Currently serving as <strong>Scrum Master at Mahsan</strong>, where I facilitate end-to-end Scrum ceremonies—from Sprint Planning to Retrospectives—for core engineering teams. My primary focus is removing systemic blockers, optimizing team velocity, and fostering a collaborative culture grounded in psychological safety and delivery predictability.
+                        Currently serving as <strong>Scrum Master at Mahsan</strong>, where I facilitate end-to-end Scrum ceremonies—from Sprint Planning to Retrospectives—for core engineering teams[cite: 1, 2]. My primary focus is removing systemic blockers, optimizing team velocity, and fostering a collaborative culture grounded in psychological safety and delivery predictability[cite: 1].
                     </p>
                 </div>
 
-                <!-- Box 2: Engineering Foundation as Leverage -->
+                <!-- Box 2: Engineering Foundation -->
                 <div class="about-feature-box">
                     <div class="about-box-header">
                         <div class="about-box-icon"><i class="fa-solid fa-code-branch"></i></div>
                         <h3>Engineering Roots & Technical Empathy</h3>
                     </div>
                     <p>
-                        My facilitation is backed by <strong>over 5 years of software engineering experience</strong> as a native Android developer (Kotlin & Java). Having lived through sprint crunches, architectural trade-offs, and technical debt firsthand, I speak the engineers' language fluently and assess delivery constraints with deep technical empathy.
+                        My facilitation is backed by <strong>over 5 years of software engineering experience</strong> as a native Android developer (Kotlin & Java)[cite: 1, 2]. Having lived through sprint crunches, architectural trade-offs, and technical debt firsthand, I speak the engineers' language fluently and assess delivery constraints with deep technical empathy[cite: 1].
                     </p>
                 </div>
 
-                <!-- Box 3: Product Value & Backlog Health -->
+                <!-- Box 3: Product Value -->
                 <div class="about-feature-box">
                     <div class="about-box-header">
                         <div class="about-box-icon"><i class="fa-solid fa-chart-line"></i></div>
                         <h3>Product Mindset & Discovery</h3>
                     </div>
                     <p>
-                        With formal training in Product Management, I bridge the gap between engineering tasks and business goals. I actively partner with Product Owners to refine backlogs, break down complex epics, and establish precise acceptance criteria, ensuring the team ships actual user value rather than just closing Jira tickets.
+                        With formal training in Product Management, I bridge the gap between engineering tasks and business goals[cite: 1]. I actively partner with Product Owners to refine backlogs, break down complex epics, and establish precise acceptance criteria, ensuring the team ships actual user value rather than just closing Jira tickets[cite: 1].
                     </p>
                 </div>
 
-                <!-- Box 4: Servant Leadership Philosophy -->
+                <!-- Box 4: Servant Leadership -->
                 <div class="about-feature-box">
                     <div class="about-box-header">
                         <div class="about-box-icon"><i class="fa-solid fa-handshake-angle"></i></div>
                         <h3>Servant Leadership & Flow</h3>
                     </div>
                     <p>
-                        I champion transparent workflows using Jira, Confluence, and Miro to give stakeholders crystal-clear visibility while protecting developers' deep-work flow. My leadership philosophy is simple: eliminate friction, align team autonomy with product vision, and celebrate continuous incremental improvement.
+                        I champion transparent workflows using Jira, Confluence, and Miro to give stakeholders crystal-clear visibility while protecting developers' deep-work flow[cite: 1]. My leadership philosophy is simple: eliminate friction, align team autonomy with product vision, and celebrate continuous incremental improvement[cite: 1].
                     </p>
                 </div>
             </div>
@@ -834,13 +915,12 @@
             </div>
 
             <div class="services-grid">
-                <!-- Competency 1 -->
                 <div class="service-card">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
                         <h4>Agile & Scrum Facilitation</h4>
                         <p style="font-size: 0.92rem; color: var(--text-body);">
-                            Guiding Sprint Planning, Daily Scrums, Reviews, and Retrospectives with clear structures.
+                            Guiding Sprint Planning, Daily Scrums, Reviews, and Retrospectives with clear structures[cite: 1].
                         </p>
                     </div>
                     <div>
@@ -849,13 +929,12 @@
                     </div>
                 </div>
 
-                <!-- Competency 2 -->
                 <div class="service-card">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-list-check"></i></div>
                         <h4>Backlog Health & Refinement</h4>
                         <p style="font-size: 0.92rem; color: var(--text-body);">
-                            Partnering with Product Owners to slice epics, write crisp user stories, and define acceptance criteria.
+                            Partnering with Product Owners to slice epics, write crisp user stories, and define acceptance criteria[cite: 1].
                         </p>
                     </div>
                     <div>
@@ -864,18 +943,17 @@
                     </div>
                 </div>
 
-                <!-- Competency 3 -->
                 <div class="service-card">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                         <h4>Delivery Visibility & Tooling</h4>
                         <p style="font-size: 0.92rem; color: var(--text-body);">
-                            Mastery of Jira, Confluence, and Miro to visualize workflow bottlenecks and maintain clear sprint metrics.
+                            Mastery of Jira, Confluence, and Miro to visualize workflow bottlenecks and maintain clear sprint metrics[cite: 1].
                         </p>
                     </div>
                     <div>
                         <span class="service-app-label">Real-world impact:</span>
-                        <p class="service-app-text">Provides transparent progress metrics to stakeholders while removing daily operational impediments for developers.</p>
+                        <p class="service-app-text">Provides transparent progress metrics to stakeholders while removing daily operational impediments for developers[cite: 1].</p>
                     </div>
                 </div>
             </div>
@@ -943,13 +1021,13 @@
         <section id="contact" style="border-top: none; padding-top: 0;">
             <div class="cta-banner">
                 <h3>Let’s build high-performing teams together</h3>
-                <p>Looking for a Scrum Master who understands both code and human dynamics? I’d love to connect and discuss how I can contribute to your team.</p>
+                <p>Looking for a Scrum Master who understands both code and human dynamics? I’d love to connect and discuss how I can contribute to your team[cite: 1, 2].</p>
                 <div class="cta-buttons">
                     <a href="mailto:balasinazanin@gmail.com" class="btn btn-primary">
-                        <i class="fa-solid fa-paper-plane"></i> Send an Email
+                        <i class="fa-solid fa-paper-plane"></i> Send an Email[cite: 1]
                     </a>
                     <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" class="btn btn-outline">
-                        <i class="fa-brands fa-linkedin"></i> View LinkedIn Profile
+                        <i class="fa-brands fa-linkedin"></i> View LinkedIn Profile[cite: 1]
                     </a>
                 </div>
             </div>
@@ -960,13 +1038,41 @@
     <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:balasinazanin@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/nazanin-balasi/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>[cite: 1]
+            <a href="mailto:balasinazanin@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>[cite: 1]
         </div>
         <p>© Khatere (Nazanin) Balasi. Hosted on GitHub Pages.</p>
     </footer>
 
-    <!-- Interactive JavaScript -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- CUSTOM CHATBOT WIDGET (Tied to Metis)                         -->
+    <!-- ------------------------------------------------------------- -->
+    <div class="chatbot-container">
+        <!-- Chat Window -->
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chatbot-window-header">
+                <div class="chatbot-window-header-title">
+                    <i class="fa-solid fa-robot" style="color: #c084fc;"></i>
+                    <span>Agile & Scrum AI Assistant</span>
+                </div>
+                <button class="chatbot-close-btn" id="closeChatBtn" title="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <iframe id="metisChatFrame" src="" title="Metis Chat"></iframe>
+        </div>
+
+        <!-- English Tooltip -->
+        <div class="chatbot-tooltip" id="chatTooltip">
+            <span class="pulse-dot"></span>
+            <span>Ask about Agile & Scrum Fundamentals</span>
+        </div>
+
+        <!-- Trigger Button -->
+        <div class="chatbot-trigger-btn" id="chatTriggerBtn" title="Chat with AI Assistant">
+            <i class="fa-solid fa-comments" id="chatTriggerIcon"></i>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
         // Theme Switcher Logic
         const themeBtn = document.getElementById('themeToggle');
@@ -990,28 +1096,59 @@
             }
         });
 
-        // Discreet Audio Player
+        // 100% Reliable Audio Player Logic
         const musicToggle = document.getElementById('musicToggle');
         const bgMusic = document.getElementById('bgMusic');
         const musicIcon = document.getElementById('musicIcon');
         const musicText = document.getElementById('musicText');
 
+        bgMusic.volume = 0.5;
+
         musicToggle.addEventListener('click', () => {
             if (bgMusic.paused) {
-                bgMusic.play();
-                musicIcon.classList.replace('fa-play', 'fa-pause');
-                musicText.textContent = 'Playing...';
+                bgMusic.play().then(() => {
+                    musicIcon.className = 'fa-solid fa-pause';
+                    musicText.textContent = 'Playing...';
+                }).catch(err => {
+                    console.error("Playback failed:", err);
+                    musicText.textContent = 'Click again';
+                });
             } else {
                 bgMusic.pause();
-                musicIcon.classList.replace('fa-pause', 'fa-play');
+                musicIcon.className = 'fa-solid fa-play';
                 musicText.textContent = 'Lo-Fi Vibe';
             }
         });
+
+        // Custom Chatbot Toggle Logic (Metis Integration)
+        const chatTriggerBtn = document.getElementById('chatTriggerBtn');
+        const chatTooltip = document.getElementById('chatTooltip');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeChatBtn = document.getElementById('closeChatBtn');
+        const metisFrame = document.getElementById('metisChatFrame');
+        const chatIcon = document.getElementById('chatTriggerIcon');
+
+        const METIS_CHAT_URL = "https://console.metisai.ir/chat/cb54742e-5695-47f7-9e90-2173f45aaf08";
+
+        function toggleChat() {
+            const isOpen = chatWindow.style.display === 'flex';
+            if (isOpen) {
+                chatWindow.style.display = 'none';
+                chatTooltip.style.display = 'flex';
+                chatIcon.className = 'fa-solid fa-comments';
+            } else {
+                if (!metisFrame.src || metisFrame.src === window.location.href || metisFrame.src === '') {
+                    metisFrame.src = METIS_CHAT_URL;
+                }
+                chatWindow.style.display = 'flex';
+                chatTooltip.style.display = 'none';
+                chatIcon.className = 'fa-solid fa-xmark';
+            }
+        }
+
+        chatTriggerBtn.addEventListener('click', toggleChat);
+        chatTooltip.addEventListener('click', toggleChat);
+        closeChatBtn.addEventListener('click', toggleChat);
     </script>
-    <div class="metis-helper-badge">
-        <span class="pulse-dot"></span>
-        <span>پرسش درباره مفاهیم اسکرام و تجربیات</span>
-    </div>
-    <script src="https://console.metisai.ir/chat-widget.js" data-bot-id="cb54742e-5695-47f7-9e90-2173f45aaf08" default-open="false" async></script> 
 </body>
 </html>
