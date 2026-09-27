@@ -644,6 +644,53 @@
                 display: none;
             }
         }
+
+/* Metis Widget Custom Styling */
+        iframe[src*="metisai.ir"],
+        div[id*="metis"] {
+            border-radius: 20px !important;
+            overflow: hidden !important;
+            box-shadow: 0 20px 45px -10px rgba(124, 58, 237, 0.4) !important;
+            border: 1px solid rgba(168, 85, 247, 0.35) !important;
+        }
+        
+        /* Chatbot Helper Tag (Above Widget) */
+        .metis-helper-badge {
+            position: fixed;
+            bottom: 92px;
+            right: 24px;
+            z-index: 9999;
+            background: rgba(18, 14, 30, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(168, 85, 247, 0.45);
+            color: #f3e8ff;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+            pointer-events: none;
+            direction: rtl;
+            animation: floatBadge 3s ease-in-out infinite alternate;
+        }
+        
+        .metis-helper-badge span.pulse-dot {
+            width: 7px;
+            height: 7px;
+            background: #a855f7;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #c084fc;
+        }
+        
+        @keyframes floatBadge {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-4px); }
+        }
+                
     </style>
 </head>
 <body>
@@ -961,7 +1008,10 @@
             }
         });
     </script>
-
-    <script src="https://console.metisai.ir/chat-widget.js" data-bot-id="cb54742e-5695-47f7-9e90-2173f45aaf08" default-open="true" async></script> 
+    <div class="metis-helper-badge">
+        <span class="pulse-dot"></span>
+        <span>پرسش درباره مفاهیم اسکرام و تجربیات</span>
+    </div>
+    <script src="https://console.metisai.ir/chat-widget.js" data-bot-id="cb54742e-5695-47f7-9e90-2173f45aaf08" default-open="false" async></script> 
 </body>
 </html>
